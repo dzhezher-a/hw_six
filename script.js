@@ -1,4 +1,6 @@
 function userPortraitApp() {
+  let regExpUk = / ^[А-ЯҐЄІЇ]+$/;
+
   function promptAge() {
     let input = prompt("Введіть ваш рік народження: ");
 
@@ -21,7 +23,7 @@ function userPortraitApp() {
   function promptCity() {
     let input = prompt("Введіть ваше місто: ");
 
-    while (input !== / ^[А-ЯҐЄІЇ]+$/ || input.trim() === "") {
+    while (input !== regExpUk || input.trim() === "") {
       if (input === null) {
         alert("Шкода, що Ви не захотіли ввісти своє місто.");
         return "?";
@@ -37,7 +39,7 @@ function userPortraitApp() {
   function promptSport() {
     let input = prompt("Введіть ваш улюблений від спорту: ");
 
-    while (input !== /\p{IsCyrillic}/ || input.trim() === "") {
+    while (input !== regExpUk || input.trim() === "") {
       if (input === null) {
         alert("Шкода, що Ви не захотіли ввісти свій улюблений від спорту.");
         return "Завдання на сьогодні: вийти на вулицю та почати бійку з випадковим перехожим";
